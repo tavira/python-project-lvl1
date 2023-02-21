@@ -1,5 +1,5 @@
-from brain_games.even_game import get_question_answer_pair
-from brain_games.even_game import get_game_description
+from brain_games.calc_game import get_question_answer_pair
+from brain_games.calc_game import get_game_description
 from brain_games.engine import run_game
 
 
