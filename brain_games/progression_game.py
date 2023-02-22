@@ -21,8 +21,17 @@ def get_random_hidden_index(progression_length):
 
 
 def make_question(progression, hidden_index):
-    return ' '.join(str(x) for x in progression[:hidden_index]) + \
-        ' .. ' + ' '.join(str(x) for x in progression[hidden_index + 1:])
+    progression_text_before_hidden_index = \
+        ' '.join(str(x) for x in progression[:hidden_index])
+    progression_text_after_hidden_index = \
+        ' '.join(str(x) for x in progression[hidden_index + 1:])
+    if hidden_index == 0:
+        return '.. ' + progression_text_after_hidden_index
+    if hidden_index == len(progression) - 1:
+        return progression_text_before_hidden_index + ' ..'
+    return progression_text_before_hidden_index + \
+        ' .. ' + \
+        progression_text_after_hidden_index
 
 
 def get_question_answer_pair():
